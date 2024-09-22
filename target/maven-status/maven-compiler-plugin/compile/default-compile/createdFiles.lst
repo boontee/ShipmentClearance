@@ -1,0 +1,14 @@
+org/acme/cc_approval/model/Shipment.class
+org/acme/cc_approval/model/Coffee.class
+org/acme/cc_approval/model/Customer.class
+org/acme/cc_approval/service/CoffeeResource.class
+org/acme/cc_approval/model/Item.class
+org/acme/cc_approval/model/CreditCard.class
+org/acme/cc_approval/service/CreditCardService.class
+org/acme/cc_approval/service/CoffeeService.class
+org/acme/cc_approval/service/AuditService.class
+META-INF/panache-archive.marker
+org/acme/cc_approval/service/UsersRemoteService.class
+org/acme/cc_approval/model/Applicant.class
+org/acme/cc_approval/model/User.class
+org/acme/cc_approval/service/UserService.class
