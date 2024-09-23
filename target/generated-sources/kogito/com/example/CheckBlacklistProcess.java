@@ -88,8 +88,11 @@ public class CheckBlacklistProcess extends org.kie.kogito.process.impl.AbstractP
             org.acme.cc_approval.model.Customer receiver = (org.acme.cc_approval.model.Customer) kcontext.getVariable("receiver");
             if (username == null) {
                 username = receiver.getName();
+                kcontext.setVariable("username", username);
+                kcontext.setVariable("receiverName", username);
             }
             approved = false;
+            kcontext.setVariable("approved", false);
             System.out.println("****************** CheckBlacklist Pre");
             System.out.println("shipment.receiver:" + receiver);
             System.out.println("shipment.approved:" + approved);
@@ -111,6 +114,7 @@ public class CheckBlacklistProcess extends org.kie.kogito.process.impl.AbstractP
             java.lang.String username = (java.lang.String) kcontext.getVariable("username");
             java.lang.Boolean approved = (java.lang.Boolean) kcontext.getVariable("approved");
             approved = false;
+            kcontext.setVariable("approved", false);
             System.out.println("****************** Rejected");
             System.out.println("username:" + username);
             System.out.println("approved:" + approved);
@@ -132,6 +136,7 @@ public class CheckBlacklistProcess extends org.kie.kogito.process.impl.AbstractP
             java.lang.String username = (java.lang.String) kcontext.getVariable("username");
             java.lang.Boolean approved = (java.lang.Boolean) kcontext.getVariable("approved");
             approved = true;
+            kcontext.setVariable("approved", true);
             System.out.println("****************** Approved");
             System.out.println("username:" + username);
             System.out.println("approved:" + approved);
@@ -170,14 +175,15 @@ public class CheckBlacklistProcess extends org.kie.kogito.process.impl.AbstractP
         workItemNode_08C87A94_E5F4_41B4_A38B_3305342E916B.metaData("width", 154);
         workItemNode_08C87A94_E5F4_41B4_A38B_3305342E916B.metaData("y", 138);
         workItemNode_08C87A94_E5F4_41B4_A38B_3305342E916B.metaData("height", 102);
-        workItemNode_08C87A94_E5F4_41B4_A38B_3305342E916B.onActionScript("onEntry", "java", "if (username == null){\n    username = receiver.getName();\n}\n\napproved = false;\n\nSystem.out.println(\"****************** CheckBlacklist EntryAction\");\nSystem.out.println(\"username:\" + username );\nSystem.out.println(\"approved:\" + approved );\nSystem.out.println(\"****************** CheckBlacklist EntryAction\");\n", (org.kie.kogito.internal.process.runtime.KogitoProcessContext kcontext) -> {
+        workItemNode_08C87A94_E5F4_41B4_A38B_3305342E916B.onActionScript("onEntry", "java", "/*if (username == null){\n    username = receiver.getName();\n}\n\napproved = false;\n*/\nSystem.out.println(\"****************** CheckBlacklist EntryAction\");\nSystem.out.println(\"username:\" + username );\nSystem.out.println(\"approved:\" + approved );\nSystem.out.println(\"****************** CheckBlacklist EntryAction\");\n", (org.kie.kogito.internal.process.runtime.KogitoProcessContext kcontext) -> {
             java.lang.String username = (java.lang.String) kcontext.getVariable("username");
-            org.acme.cc_approval.model.Customer receiver = (org.acme.cc_approval.model.Customer) kcontext.getVariable("receiver");
             java.lang.Boolean approved = (java.lang.Boolean) kcontext.getVariable("approved");
-            if (username == null) {
-                username = receiver.getName();
-            }
-            approved = false;
+            /*if (username == null){
+    username = receiver.getName();
+}
+
+approved = false;
+*/
             System.out.println("****************** CheckBlacklist EntryAction");
             System.out.println("username:" + username);
             System.out.println("approved:" + approved);

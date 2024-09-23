@@ -9,6 +9,7 @@ org/acme/cc_approval/service/CoffeeService.class
 org/acme/cc_approval/service/AuditService.class
 META-INF/panache-archive.marker
 org/acme/cc_approval/service/UsersRemoteService.class
+org/acme/cc_approval/model/Traveller.class
 org/acme/cc_approval/model/Applicant.class
 org/acme/cc_approval/model/User.class
 org/acme/cc_approval/service/UserService.class

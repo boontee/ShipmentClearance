@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_z_IlMFpLED2d9OvM6MbTcQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_8AA-QFsCED2uTsyK7rOFkw" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_senderItem" structureRef="org.acme.cc_approval.model.Customer"/>
   <bpmn2:itemDefinition id="_receiverItem" structureRef="org.acme.cc_approval.model.Customer"/>
   <bpmn2:itemDefinition id="_itemItem" structureRef="org.acme.cc_approval.model.Item"/>
@@ -25,8 +25,8 @@
   <bpmn2:itemDefinition id="__948891B9-27BE-4826-99ED-31B7CE29AE51_receiverInputXItem" structureRef="org.acme.cc_approval.model.Customer"/>
   <bpmn2:itemDefinition id="__948891B9-27BE-4826-99ED-31B7CE29AE51_itemInputXItem" structureRef="org.acme.cc_approval.model.Customer"/>
   <bpmn2:itemDefinition id="__948891B9-27BE-4826-99ED-31B7CE29AE51_approvedOutputXItem" structureRef="Boolean"/>
-  <bpmn2:collaboration id="_B7BF532D-4BBF-4B04-8C8A-5BFF5CD6A363" name="Default Collaboration">
-    <bpmn2:participant id="_6A78DEE9-B64A-4921-8FE8-14CF5DC7BCB6" name="Pool Participant" processRef="SubProcessRouting"/>
+  <bpmn2:collaboration id="_E541EE2F-517D-4109-88FA-915E05B50899" name="Default Collaboration">
+    <bpmn2:participant id="_E0E9EEDE-E29B-4B7F-A9AC-66D8DB719420" name="Pool Participant" processRef="SubProcessRouting"/>
   </bpmn2:collaboration>
   <bpmn2:process id="SubProcessRouting" drools:packageName="com.example" drools:version="1.0" drools:adHoc="false" name="SubProcessRouting" isExecutable="true" processType="Public">
     <bpmn2:property id="sender" itemSubjectRef="_senderItem" name="sender">
@@ -62,14 +62,14 @@
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return "India2";]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_C6C50F02-49D5-4BC7-97B8-A610AFD8E22E" sourceRef="_C1AA7B8A-FDB4-4D30-9585-A6C8286DC1F9" targetRef="_77CAAA4B-38E4-4176-9EDD-F0540E53ED49"/>
-    <bpmn2:sequenceFlow id="_68D78459-5EDB-4E58-9E8A-E61CD91DA435" sourceRef="_6A2AC3E6-5847-41F9-8436-A9835C7F9957" targetRef="_C1AA7B8A-FDB4-4D30-9585-A6C8286DC1F9">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return subprocess.toLowerCase().equals("india1");]]></bpmn2:conditionExpression>
+    <bpmn2:sequenceFlow id="_543BB1DC-B8D7-4EBB-A958-C62B2EF532F2" sourceRef="_6A2AC3E6-5847-41F9-8436-A9835C7F9957" targetRef="_12606697-7BAB-44F6-BB27-2AC7F2C06FEC">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return subprocess.toLowerCase().equals("india2");]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_7EC2FC8B-62DD-43E9-947C-3EF51206BB18" sourceRef="_6A2AC3E6-5847-41F9-8436-A9835C7F9957" targetRef="_948891B9-27BE-4826-99ED-31B7CE29AE51">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return subprocess.toLowerCase().equals("my");]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
-    <bpmn2:sequenceFlow id="_543BB1DC-B8D7-4EBB-A958-C62B2EF532F2" sourceRef="_6A2AC3E6-5847-41F9-8436-A9835C7F9957" targetRef="_12606697-7BAB-44F6-BB27-2AC7F2C06FEC">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return subprocess.toLowerCase().equals("india2");]]></bpmn2:conditionExpression>
+    <bpmn2:sequenceFlow id="_68D78459-5EDB-4E58-9E8A-E61CD91DA435" sourceRef="_6A2AC3E6-5847-41F9-8436-A9835C7F9957" targetRef="_C1AA7B8A-FDB4-4D30-9585-A6C8286DC1F9">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return subprocess.toLowerCase().equals("india1");]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_24ED5A3D-7F5B-457C-B88B-7E17D5EA120F" sourceRef="_4AD7E128-0911-4B19-870F-ADEAEA9BDF90" targetRef="_6A2AC3E6-5847-41F9-8436-A9835C7F9957"/>
     <bpmn2:sequenceFlow id="_7C1359E2-2281-4EFC-A924-37046211C9DF" sourceRef="_516D7EC7-2BF1-4280-8755-248B41BCFA56" targetRef="_70C6F442-D62B-44CD-B31F-E59115835E1F">
@@ -96,7 +96,7 @@ System.out.println("******************");
       <bpmn2:incoming>_A47C0D31-1AC3-48B3-9D8C-EE5DE3FA833B</bpmn2:incoming>
       <bpmn2:outgoing>_F55C2499-29D0-45EF-B844-4100C3C630F3</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
-    <bpmn2:callActivity id="_948891B9-27BE-4826-99ED-31B7CE29AE51" drools:independent="false" drools:waitForCompletion="true" name="MY SubProcess" calledElement="MY_SubProcess">
+    <bpmn2:callActivity id="_948891B9-27BE-4826-99ED-31B7CE29AE51" drools:independent="true" drools:waitForCompletion="true" name="MY SubProcess" calledElement="MY_SubProcess">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[MY SubProcess]]></drools:metaValue>
@@ -135,7 +135,7 @@ System.out.println("******************");
         <bpmn2:targetRef>approved</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
-    <bpmn2:callActivity id="_12606697-7BAB-44F6-BB27-2AC7F2C06FEC" drools:independent="false" drools:waitForCompletion="true" name="India2 SubProcess" calledElement="India2_SubProcess">
+    <bpmn2:callActivity id="_12606697-7BAB-44F6-BB27-2AC7F2C06FEC" drools:independent="true" drools:waitForCompletion="true" name="India2 SubProcess" calledElement="India2_SubProcess">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[India2 SubProcess]]></drools:metaValue>
@@ -179,6 +179,14 @@ System.out.println("******************");
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[SubProcess Routing Decision]]></drools:metaValue>
         </drools:metaData>
+        <drools:onEntry-script scriptFormat="http://www.java.com/java">
+          <drools:script><![CDATA[System.out.println("****************** SubProcessRoutingDecision EntryAction");
+System.out.println("incoming shipment.sender:" + sender );
+System.out.println("incoming shipment.receiver:" + receiver );
+System.out.println("incoming shipment.item:" + item );
+System.out.println("****************** SubProcessRoutingDecision EntryAction");
+]]></drools:script>
+        </drools:onEntry-script>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_919DB135-B823-4D6E-A41A-1E0856D4B330</bpmn2:incoming>
       <bpmn2:outgoing>_24ED5A3D-7F5B-457C-B88B-7E17D5EA120F</bpmn2:outgoing>
@@ -249,7 +257,7 @@ System.out.println("******************");
         <bpmn2:targetRef>subprocess</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:businessRuleTask>
-    <bpmn2:callActivity id="_C1AA7B8A-FDB4-4D30-9585-A6C8286DC1F9" drools:independent="false" drools:waitForCompletion="true" name="India1 SubProcess" calledElement="India1_SubProcess">
+    <bpmn2:callActivity id="_C1AA7B8A-FDB4-4D30-9585-A6C8286DC1F9" drools:independent="true" drools:waitForCompletion="true" name="India1 SubProcess" calledElement="India1_SubProcess">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[India1 SubProcess]]></drools:metaValue>
@@ -290,9 +298,9 @@ System.out.println("******************");
     </bpmn2:callActivity>
     <bpmn2:exclusiveGateway id="_6A2AC3E6-5847-41F9-8436-A9835C7F9957" gatewayDirection="Diverging">
       <bpmn2:incoming>_24ED5A3D-7F5B-457C-B88B-7E17D5EA120F</bpmn2:incoming>
-      <bpmn2:outgoing>_543BB1DC-B8D7-4EBB-A958-C62B2EF532F2</bpmn2:outgoing>
-      <bpmn2:outgoing>_7EC2FC8B-62DD-43E9-947C-3EF51206BB18</bpmn2:outgoing>
       <bpmn2:outgoing>_68D78459-5EDB-4E58-9E8A-E61CD91DA435</bpmn2:outgoing>
+      <bpmn2:outgoing>_7EC2FC8B-62DD-43E9-947C-3EF51206BB18</bpmn2:outgoing>
+      <bpmn2:outgoing>_543BB1DC-B8D7-4EBB-A958-C62B2EF532F2</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:endEvent id="_70C6F442-D62B-44CD-B31F-E59115835E1F">
       <bpmn2:incoming>_7C1359E2-2281-4EFC-A924-37046211C9DF</bpmn2:incoming>
@@ -342,19 +350,19 @@ System.out.println("******************");
         <di:waypoint x="484" y="200"/>
         <di:waypoint x="701" y="198"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="edge_shape__6A2AC3E6-5847-41F9-8436-A9835C7F9957_to_shape__12606697-7BAB-44F6-BB27-2AC7F2C06FEC" bpmnElement="_543BB1DC-B8D7-4EBB-A958-C62B2EF532F2">
+      <bpmndi:BPMNEdge id="edge_shape__6A2AC3E6-5847-41F9-8436-A9835C7F9957_to_shape__C1AA7B8A-FDB4-4D30-9585-A6C8286DC1F9" bpmnElement="_68D78459-5EDB-4E58-9E8A-E61CD91DA435">
         <di:waypoint x="701" y="198"/>
-        <di:waypoint x="867" y="198"/>
+        <di:waypoint x="700.9999999999984" y="69.99999999841071"/>
+        <di:waypoint x="867" y="70"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__6A2AC3E6-5847-41F9-8436-A9835C7F9957_to_shape__948891B9-27BE-4826-99ED-31B7CE29AE51" bpmnElement="_7EC2FC8B-62DD-43E9-947C-3EF51206BB18">
         <di:waypoint x="701" y="198"/>
         <di:waypoint x="701.0000004828306" y="319.49999922251095"/>
         <di:waypoint x="867" y="321"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="edge_shape__6A2AC3E6-5847-41F9-8436-A9835C7F9957_to_shape__C1AA7B8A-FDB4-4D30-9585-A6C8286DC1F9" bpmnElement="_68D78459-5EDB-4E58-9E8A-E61CD91DA435">
+      <bpmndi:BPMNEdge id="edge_shape__6A2AC3E6-5847-41F9-8436-A9835C7F9957_to_shape__12606697-7BAB-44F6-BB27-2AC7F2C06FEC" bpmnElement="_543BB1DC-B8D7-4EBB-A958-C62B2EF532F2">
         <di:waypoint x="701" y="198"/>
-        <di:waypoint x="700.9999999999984" y="69.99999999841071"/>
-        <di:waypoint x="867" y="70"/>
+        <di:waypoint x="867" y="198"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__C1AA7B8A-FDB4-4D30-9585-A6C8286DC1F9_to_shape__77CAAA4B-38E4-4176-9EDD-F0540E53ED49" bpmnElement="_C6C50F02-49D5-4BC7-97B8-A610AFD8E22E">
         <di:waypoint x="867" y="70"/>
@@ -491,7 +499,7 @@ System.out.println("******************");
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_z_IlMFpLED2d9OvM6MbTcQ</bpmn2:source>
-    <bpmn2:target>_z_IlMFpLED2d9OvM6MbTcQ</bpmn2:target>
+    <bpmn2:source>_8AA-QFsCED2uTsyK7rOFkw</bpmn2:source>
+    <bpmn2:target>_8AA-QFsCED2uTsyK7rOFkw</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>

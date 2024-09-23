@@ -39,7 +39,7 @@ public class ShipmentClearanceModel implements org.kie.kogito.Model, MapInput, M
         return this.id;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "item")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Item item;
@@ -65,7 +65,7 @@ public class ShipmentClearanceModel implements org.kie.kogito.Model, MapInput, M
         this.approved = approved;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "receiver")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Customer receiver;
@@ -78,7 +78,7 @@ public class ShipmentClearanceModel implements org.kie.kogito.Model, MapInput, M
         this.receiver = receiver;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "sender")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Customer sender;
@@ -95,7 +95,10 @@ public class ShipmentClearanceModel implements org.kie.kogito.Model, MapInput, M
     public ShipmentClearanceModelOutput toModel() {
         ShipmentClearanceModelOutput result = new ShipmentClearanceModelOutput();
         result.setId(getId());
+        result.setItem(getItem());
         result.setApproved(getApproved());
+        result.setReceiver(getReceiver());
+        result.setSender(getSender());
         return result;
     }
 }

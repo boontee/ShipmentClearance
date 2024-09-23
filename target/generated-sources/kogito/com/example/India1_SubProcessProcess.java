@@ -62,9 +62,9 @@ public class India1_SubProcessProcess extends org.kie.kogito.process.impl.Abstra
 
     protected org.kie.api.definition.process.Process process() {
         RuleFlowProcessFactory factory = RuleFlowProcessFactory.createProcess("India1_SubProcess", true);
-        factory.variable("sender", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Customer.class), java.util.Map.of("customTags", "input", "sender", "sender", "ItemSubjectRef", "_senderItem"));
-        factory.variable("receiver", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Customer.class), java.util.Map.of("customTags", "input", "receiver", "receiver", "ItemSubjectRef", "_receiverItem"));
-        factory.variable("item", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Item.class), java.util.Map.of("item", "item", "customTags", "input", "ItemSubjectRef", "_itemItem"));
+        factory.variable("sender", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Customer.class), java.util.Map.of("sender", "sender", "ItemSubjectRef", "_senderItem"));
+        factory.variable("receiver", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Customer.class), java.util.Map.of("receiver", "receiver", "ItemSubjectRef", "_receiverItem"));
+        factory.variable("item", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Item.class), java.util.Map.of("item", "item", "ItemSubjectRef", "_itemItem"));
         factory.variable("approved", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(java.lang.Boolean.class), java.util.Map.of("approved", "approved", "ItemSubjectRef", "_approvedItem"));
         factory.variable("receiverName", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(java.lang.String.class), java.util.Map.of("receiverName", "receiverName", "ItemSubjectRef", "_receiverNameItem"));
         factory.variable("username", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(java.lang.String.class), java.util.Map.of("ItemSubjectRef", "_usernameItem", "username", "username"));
@@ -90,7 +90,7 @@ public class India1_SubProcessProcess extends org.kie.kogito.process.impl.Abstra
             org.acme.cc_approval.model.Item item = (org.acme.cc_approval.model.Item) kcontext.getVariable("item");
             java.lang.Boolean approved = (java.lang.Boolean) kcontext.getVariable("approved");
             java.lang.String receiverName = (java.lang.String) kcontext.getVariable("receiverName");
-            System.out.println("****************** Post");
+            System.out.println("****************** India1_SubProcess Post");
             System.out.println("shipment.sender:" + sender);
             System.out.println("shipment.receiver:" + receiver);
             System.out.println("shipment.item:" + item);

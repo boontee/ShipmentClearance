@@ -61,9 +61,9 @@ public class ShipmentClearanceProcess extends org.kie.kogito.process.impl.Abstra
 
     protected org.kie.api.definition.process.Process process() {
         RuleFlowProcessFactory factory = RuleFlowProcessFactory.createProcess("ShipmentClearance", true);
-        factory.variable("sender", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Customer.class), java.util.Map.of("customTags", "input", "sender", "sender", "ItemSubjectRef", "_senderItem"));
-        factory.variable("receiver", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Customer.class), java.util.Map.of("customTags", "input", "receiver", "receiver", "ItemSubjectRef", "_receiverItem"));
-        factory.variable("item", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Item.class), java.util.Map.of("item", "item", "customTags", "input", "ItemSubjectRef", "_itemItem"));
+        factory.variable("sender", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Customer.class), java.util.Map.of("sender", "sender", "ItemSubjectRef", "_senderItem"));
+        factory.variable("receiver", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Customer.class), java.util.Map.of("receiver", "receiver", "ItemSubjectRef", "_receiverItem"));
+        factory.variable("item", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(org.acme.cc_approval.model.Item.class), java.util.Map.of("item", "item", "ItemSubjectRef", "_itemItem"));
         factory.variable("approved", org.jbpm.process.core.datatype.DataTypeResolver.fromClass(java.lang.Boolean.class), java.util.Map.of("approved", "approved", "ItemSubjectRef", "_approvedItem"));
         factory.name("ShipmentClearance");
         factory.packageName("com.example");
@@ -131,12 +131,12 @@ public class ShipmentClearanceProcess extends org.kie.kogito.process.impl.Abstra
         humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.workParameter("NodeName", "Review Clearance Result");
         humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.workParameter("Skippable", "false");
         humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.workParameter("TaskName", "ReviewClearanceResult");
-        humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_TaskNameInputX", "TaskName", "Object", null), java.util.Arrays.asList(new org.jbpm.workflow.core.node.Assignment(null, new org.jbpm.workflow.core.impl.DataDefinition("837fbe97-2531-49d3-8b63-a74931c77965", "EXPRESSION (ReviewClearanceResult)", "java.lang.Object", "ReviewClearanceResult"), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_TaskNameInputX", "TaskName", "Object", null))), null));
+        humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_TaskNameInputX", "TaskName", "Object", null), java.util.Arrays.asList(new org.jbpm.workflow.core.node.Assignment(null, new org.jbpm.workflow.core.impl.DataDefinition("09713338-81a8-42b5-8faa-b09d52016831", "EXPRESSION (ReviewClearanceResult)", "java.lang.Object", "ReviewClearanceResult"), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_TaskNameInputX", "TaskName", "Object", null))), null));
         humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(new org.jbpm.workflow.core.impl.DataDefinition("sender", "sender", "org.acme.cc_approval.model.Customer", null)), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_senderInputX", "sender", "org.acme.cc_approval.model.Customer", null), null, null));
         humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(new org.jbpm.workflow.core.impl.DataDefinition("receiver", "receiver", "org.acme.cc_approval.model.Customer", null)), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_receiverInputX", "receiver", "org.acme.cc_approval.model.Customer", null), null, null));
         humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(new org.jbpm.workflow.core.impl.DataDefinition("item", "item", "org.acme.cc_approval.model.Item", null)), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_itemInputX", "item", "org.acme.cc_approval.model.Item", null), null, null));
         humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(new org.jbpm.workflow.core.impl.DataDefinition("approved", "approved", "java.lang.Boolean", null)), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_approvedInputX", "approved", "Boolean", null), null, null));
-        humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_SkippableInputX", "Skippable", "Object", null), java.util.Arrays.asList(new org.jbpm.workflow.core.node.Assignment(null, new org.jbpm.workflow.core.impl.DataDefinition("76607268-8a21-4918-b61d-72e1958e0ee5", "EXPRESSION (false)", "java.lang.Object", "false"), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_SkippableInputX", "Skippable", "Object", null))), null));
+        humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_SkippableInputX", "Skippable", "Object", null), java.util.Arrays.asList(new org.jbpm.workflow.core.node.Assignment(null, new org.jbpm.workflow.core.impl.DataDefinition("b5ed4376-c75d-4ea0-9f26-d2bb2918c9f8", "EXPRESSION (false)", "java.lang.Object", "false"), new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_SkippableInputX", "Skippable", "Object", null))), null));
         humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.mapDataOutputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(new org.jbpm.workflow.core.impl.DataDefinition("_1A242378-7234-407F-ACB5-2EAD61B340E2_approvedOutputX", "approved", "Boolean", null)), new org.jbpm.workflow.core.impl.DataDefinition("approved", "approved", "java.lang.Boolean", null), null, null));
         humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.done();
         humanTaskNode_1A242378_7234_407F_ACB5_2EAD61B340E2.metaData("UniqueId", "_1A242378-7234-407F-ACB5-2EAD61B340E2");
@@ -177,7 +177,7 @@ public class ShipmentClearanceProcess extends org.kie.kogito.process.impl.Abstra
         subProcessNode_53F3E01B_BA27_4323_AC03_7DD72FFD3960.processId("SubProcessRouting");
         subProcessNode_53F3E01B_BA27_4323_AC03_7DD72FFD3960.processName("");
         subProcessNode_53F3E01B_BA27_4323_AC03_7DD72FFD3960.waitForCompletion(true);
-        subProcessNode_53F3E01B_BA27_4323_AC03_7DD72FFD3960.independent(false);
+        subProcessNode_53F3E01B_BA27_4323_AC03_7DD72FFD3960.independent(true);
         subProcessNode_53F3E01B_BA27_4323_AC03_7DD72FFD3960.subProcessNode(new org.jbpm.workflow.core.node.SubProcessFactory<SubProcessRoutingModel>() {
 
             public SubProcessRoutingModel bind(org.kie.api.runtime.process.ProcessContext kcontext) {
@@ -223,9 +223,9 @@ public class ShipmentClearanceProcess extends org.kie.kogito.process.impl.Abstra
         endNode_8A857831_507A_4259_BB78_969C41C6E361.metaData("height", 56);
         endNode_8A857831_507A_4259_BB78_969C41C6E361.done();
         org.jbpm.ruleflow.core.factory.ActionNodeFactory<?> actionNode_4D75A3DF_F292_419B_8947_3394F3F6761B = factory.actionNode(org.jbpm.ruleflow.core.WorkflowElementIdentifierFactory.fromExternalFormat("_4D75A3DF-F292-419B-8947-3394F3F6761B"));
-        actionNode_4D75A3DF_F292_419B_8947_3394F3F6761B.name("Send Shipment for approval");
+        actionNode_4D75A3DF_F292_419B_8947_3394F3F6761B.name("Pre");
         actionNode_4D75A3DF_F292_419B_8947_3394F3F6761B.metaData("UniqueId", "_4D75A3DF-F292-419B-8947-3394F3F6761B");
-        actionNode_4D75A3DF_F292_419B_8947_3394F3F6761B.metaData("elementname", "Send Shipment for approval");
+        actionNode_4D75A3DF_F292_419B_8947_3394F3F6761B.metaData("elementname", "Pre");
         actionNode_4D75A3DF_F292_419B_8947_3394F3F6761B.metaData("NodeType", "ScriptTask");
         actionNode_4D75A3DF_F292_419B_8947_3394F3F6761B.metaData("x", 454);
         actionNode_4D75A3DF_F292_419B_8947_3394F3F6761B.metaData("width", 154);
@@ -235,11 +235,11 @@ public class ShipmentClearanceProcess extends org.kie.kogito.process.impl.Abstra
             org.acme.cc_approval.model.Customer sender = (org.acme.cc_approval.model.Customer) kcontext.getVariable("sender");
             org.acme.cc_approval.model.Customer receiver = (org.acme.cc_approval.model.Customer) kcontext.getVariable("receiver");
             org.acme.cc_approval.model.Item item = (org.acme.cc_approval.model.Item) kcontext.getVariable("item");
-            System.out.println("******************");
+            System.out.println("****************** ShipmentClearance Pre");
             System.out.println("incoming shipment.sender:" + sender);
             System.out.println("incoming shipment.receiver:" + receiver);
             System.out.println("incoming shipment.item:" + item);
-            System.out.println("******************");
+            System.out.println("****************** ShipmentClearance Pre");
         });
         actionNode_4D75A3DF_F292_419B_8947_3394F3F6761B.done();
         factory.connection(org.jbpm.ruleflow.core.WorkflowElementIdentifierFactory.fromExternalFormat("_35310A1E-3D5C-4A64-8F3D-E5A5AB244ECB"), org.jbpm.ruleflow.core.WorkflowElementIdentifierFactory.fromExternalFormat("_E6E2C685-CF60-4FAD-9A0D-C06C9D2A57E9"), "_C535E2E4-801E-4DC6-89E8-FE627A1B5CD1");

@@ -39,7 +39,7 @@ public class India1_SubProcessModel implements org.kie.kogito.Model, MapInput, M
         return this.id;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "item")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Item item;
@@ -65,7 +65,7 @@ public class India1_SubProcessModel implements org.kie.kogito.Model, MapInput, M
         this.approved = approved;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "receiver")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Customer receiver;
@@ -78,7 +78,7 @@ public class India1_SubProcessModel implements org.kie.kogito.Model, MapInput, M
         this.receiver = receiver;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "sender")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Customer sender;
@@ -121,7 +121,10 @@ public class India1_SubProcessModel implements org.kie.kogito.Model, MapInput, M
     public India1_SubProcessModelOutput toModel() {
         India1_SubProcessModelOutput result = new India1_SubProcessModelOutput();
         result.setId(getId());
+        result.setItem(getItem());
         result.setApproved(getApproved());
+        result.setReceiver(getReceiver());
+        result.setSender(getSender());
         result.setReceiverName(getReceiverName());
         result.setUsername(getUsername());
         return result;

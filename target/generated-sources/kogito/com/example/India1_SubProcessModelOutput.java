@@ -40,6 +40,19 @@ public class India1_SubProcessModelOutput implements org.kie.kogito.Model, MapIn
     }
 
     @org.kie.kogito.codegen.VariableInfo(tags = "")
+    @com.fasterxml.jackson.annotation.JsonProperty(value = "item")
+    @jakarta.validation.Valid()
+    private org.acme.cc_approval.model.Item item;
+
+    public org.acme.cc_approval.model.Item getItem() {
+        return item;
+    }
+
+    public void setItem(org.acme.cc_approval.model.Item item) {
+        this.item = item;
+    }
+
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "approved")
     @jakarta.validation.Valid()
     private java.lang.Boolean approved;
@@ -50,6 +63,32 @@ public class India1_SubProcessModelOutput implements org.kie.kogito.Model, MapIn
 
     public void setApproved(java.lang.Boolean approved) {
         this.approved = approved;
+    }
+
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
+    @com.fasterxml.jackson.annotation.JsonProperty(value = "receiver")
+    @jakarta.validation.Valid()
+    private org.acme.cc_approval.model.Customer receiver;
+
+    public org.acme.cc_approval.model.Customer getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(org.acme.cc_approval.model.Customer receiver) {
+        this.receiver = receiver;
+    }
+
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
+    @com.fasterxml.jackson.annotation.JsonProperty(value = "sender")
+    @jakarta.validation.Valid()
+    private org.acme.cc_approval.model.Customer sender;
+
+    public org.acme.cc_approval.model.Customer getSender() {
+        return sender;
+    }
+
+    public void setSender(org.acme.cc_approval.model.Customer sender) {
+        this.sender = sender;
     }
 
     @org.kie.kogito.codegen.VariableInfo(tags = "")
@@ -82,7 +121,10 @@ public class India1_SubProcessModelOutput implements org.kie.kogito.Model, MapIn
     public India1_SubProcessModel toModel() {
         India1_SubProcessModel result = new India1_SubProcessModel();
         result.setId(getId());
+        result.setItem(getItem());
         result.setApproved(getApproved());
+        result.setReceiver(getReceiver());
+        result.setSender(getSender());
         result.setReceiverName(getReceiverName());
         result.setUsername(getUsername());
         return result;

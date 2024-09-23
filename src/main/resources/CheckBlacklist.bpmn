@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_Glj8EFrAED2_-ZPQAzfudQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_AJj5kFvfED2Bv6IwxzTmbQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_travellerItem" structureRef="org.acme.cc_approval.model.User"/>
   <bpmn2:itemDefinition id="_usernameItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_approvedItem" structureRef="Boolean"/>
@@ -27,8 +27,8 @@
       <bpmn2:outMessageRef>_08C87A94-E5F4-41B4-A38B-3305342E916B_OutMessage</bpmn2:outMessageRef>
     </bpmn2:operation>
   </bpmn2:interface>
-  <bpmn2:collaboration id="_C8B0F799-7906-4E03-94E9-FBB94A0C5114" name="Default Collaboration">
-    <bpmn2:participant id="_10C22F3C-C1E3-4A5B-BE97-9C4165073895" name="Pool Participant" processRef="CheckBlacklist"/>
+  <bpmn2:collaboration id="_DDFA4777-2478-4264-ADC1-4E82672C43CA" name="Default Collaboration">
+    <bpmn2:participant id="_51923D86-25DE-44F2-9B77-E68CDEAA1895" name="Pool Participant" processRef="CheckBlacklist"/>
   </bpmn2:collaboration>
   <bpmn2:process id="CheckBlacklist" drools:packageName="com.example" drools:version="1.0" drools:adHoc="false" name="CheckBlacklist" isExecutable="true" processType="Public">
     <bpmn2:property id="traveller" itemSubjectRef="_travellerItem" name="traveller"/>
@@ -59,14 +59,6 @@
     <bpmn2:sequenceFlow id="_12E33B36-641F-4540-97D2-DAC8AFC1FD22" sourceRef="_99EC13D6-2899-45A2-8AD9-5F17E8AD0D52" targetRef="_95885F94-555D-485A-BB86-5E835B9C3389">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return traveller == null;]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
-    <bpmn2:sequenceFlow id="_BF17E37C-6984-4F27-9B6A-A9880E95B019" name="No" sourceRef="_13BAF867-3CA8-4C6F-85C6-D3FD748D07D2" targetRef="_99EC13D6-2899-45A2-8AD9-5F17E8AD0D52">
-      <bpmn2:extensionElements>
-        <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[No]]></drools:metaValue>
-        </drools:metaData>
-      </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return traveller == null;]]></bpmn2:conditionExpression>
-    </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_4EFC11AE-52BB-4EEF-B241-CFAAE4B7AE93" name="Yes" sourceRef="_13BAF867-3CA8-4C6F-85C6-D3FD748D07D2" targetRef="_E5D17755-D671-43ED-BD7D-F6538933069C">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
@@ -74,6 +66,14 @@
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return traveller != null;]]></bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="_BF17E37C-6984-4F27-9B6A-A9880E95B019" name="No" sourceRef="_13BAF867-3CA8-4C6F-85C6-D3FD748D07D2" targetRef="_99EC13D6-2899-45A2-8AD9-5F17E8AD0D52">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[No]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return traveller == null;]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_52A670E9-9448-4BDA-8589-FC646BC41FC7" sourceRef="_08C87A94-E5F4-41B4-A38B-3305342E916B" targetRef="_13BAF867-3CA8-4C6F-85C6-D3FD748D07D2"/>
     <bpmn2:sequenceFlow id="_9A8258CB-643D-491A-937A-3381BE189A5D" sourceRef="_DBEE6DB2-0A61-4591-9B37-F2EE40A71892" targetRef="_FD4D7A19-558E-4347-8CFE-376792FEDA57">
@@ -93,9 +93,14 @@
       <bpmn2:outgoing>_7912DA4F-0B77-4BED-A4B0-9F5E1A3156E6</bpmn2:outgoing>
       <bpmn2:script>if (username == null){
     username = receiver.getName();
+    kcontext.setVariable("username",username);
+    kcontext.setVariable("receiverName",username);
+
 }
 
+
 approved = false;
+kcontext.setVariable("approved", false);
 
 System.out.println("****************** CheckBlacklist Pre");
 System.out.println("shipment.receiver:" + receiver );
@@ -113,7 +118,7 @@ System.out.println("****************** CheckBlacklist Pre");
       <bpmn2:incoming>_4EB288EA-3135-4B97-BB46-E77159F78832</bpmn2:incoming>
       <bpmn2:outgoing>_9A8258CB-643D-491A-937A-3381BE189A5D</bpmn2:outgoing>
       <bpmn2:script>approved = false;
-
+kcontext.setVariable("approved", false);
 System.out.println("****************** Rejected");
 System.out.println("username:" + username );
 System.out.println("approved:" + approved );
@@ -130,7 +135,7 @@ System.out.println("****************** Rejected");
       <bpmn2:incoming>_BF17E37C-6984-4F27-9B6A-A9880E95B019</bpmn2:incoming>
       <bpmn2:outgoing>_12E33B36-641F-4540-97D2-DAC8AFC1FD22</bpmn2:outgoing>
       <bpmn2:script>approved = true;
-
+kcontext.setVariable("approved", true);
 System.out.println("****************** Approved");
 System.out.println("username:" + username );
 System.out.println("approved:" + approved );
@@ -151,12 +156,12 @@ System.out.println("****************** Approved");</bpmn2:script>
           <drools:metaValue><![CDATA[Check Blacklist]]></drools:metaValue>
         </drools:metaData>
         <drools:onEntry-script scriptFormat="http://www.java.com/java">
-          <drools:script><![CDATA[if (username == null){
+          <drools:script><![CDATA[/*if (username == null){
     username = receiver.getName();
 }
 
 approved = false;
-
+*/
 System.out.println("****************** CheckBlacklist EntryAction");
 System.out.println("username:" + username );
 System.out.println("approved:" + approved );
@@ -214,8 +219,8 @@ System.out.println("****************** CheckBlacklist EntryAction");
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_52A670E9-9448-4BDA-8589-FC646BC41FC7</bpmn2:incoming>
-      <bpmn2:outgoing>_4EFC11AE-52BB-4EEF-B241-CFAAE4B7AE93</bpmn2:outgoing>
       <bpmn2:outgoing>_BF17E37C-6984-4F27-9B6A-A9880E95B019</bpmn2:outgoing>
+      <bpmn2:outgoing>_4EFC11AE-52BB-4EEF-B241-CFAAE4B7AE93</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:endEvent id="_FD4D7A19-558E-4347-8CFE-376792FEDA57">
       <bpmn2:incoming>_9A8258CB-643D-491A-937A-3381BE189A5D</bpmn2:incoming>
@@ -258,14 +263,14 @@ System.out.println("****************** CheckBlacklist EntryAction");
         <di:waypoint x="860" y="189"/>
         <di:waypoint x="893" y="189"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="edge_shape__13BAF867-3CA8-4C6F-85C6-D3FD748D07D2_to_shape__E5D17755-D671-43ED-BD7D-F6538933069C" bpmnElement="_4EFC11AE-52BB-4EEF-B241-CFAAE4B7AE93">
-        <di:waypoint x="949" y="189"/>
-        <di:waypoint x="1002" y="189"/>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__13BAF867-3CA8-4C6F-85C6-D3FD748D07D2_to_shape__99EC13D6-2899-45A2-8AD9-5F17E8AD0D52" bpmnElement="_BF17E37C-6984-4F27-9B6A-A9880E95B019">
         <di:waypoint x="921" y="217"/>
         <di:waypoint x="921" y="325"/>
         <di:waypoint x="1285.8000183105469" y="325"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__13BAF867-3CA8-4C6F-85C6-D3FD748D07D2_to_shape__E5D17755-D671-43ED-BD7D-F6538933069C" bpmnElement="_4EFC11AE-52BB-4EEF-B241-CFAAE4B7AE93">
+        <di:waypoint x="949" y="189"/>
+        <di:waypoint x="1002" y="189"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__99EC13D6-2899-45A2-8AD9-5F17E8AD0D52_to_shape__95885F94-555D-485A-BB86-5E835B9C3389" bpmnElement="_12E33B36-641F-4540-97D2-DAC8AFC1FD22">
         <di:waypoint x="1285.8000183105469" y="325"/>
@@ -400,7 +405,7 @@ System.out.println("****************** CheckBlacklist EntryAction");
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_Glj8EFrAED2_-ZPQAzfudQ</bpmn2:source>
-    <bpmn2:target>_Glj8EFrAED2_-ZPQAzfudQ</bpmn2:target>
+    <bpmn2:source>_AJj5kFvfED2Bv6IwxzTmbQ</bpmn2:source>
+    <bpmn2:target>_AJj5kFvfED2Bv6IwxzTmbQ</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>

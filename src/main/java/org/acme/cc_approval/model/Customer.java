@@ -22,6 +22,11 @@ public class Customer {
         this.country = country;
     }
 
+    public Customer create() {
+        Customer cust = new Customer(name, telephoneNumber, email, address, postalCode, state, country);
+        return cust;
+    }
+
     public String getTelephoneNumber() {
         return telephoneNumber;
     }
@@ -70,12 +75,6 @@ public class Customer {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Customer [name=" + name + ", telephoneNumber=" + telephoneNumber + ", email=" + email + ", address="
-                + address + ", postalCode=" + postalCode + ", country=" + country + "]";
-    }
-
     public String getState() {
         return state;
     }
@@ -84,6 +83,10 @@ public class Customer {
         this.state = state;
     }
 
-
+    @Override
+    public String toString() {
+        return "Customer [name=" + name + ", telephoneNumber=" + telephoneNumber + ", email=" + email + ", address="
+                + address + ", postalCode=" + postalCode + ", state=" + state + ", country=" + country + "]";
+    }
     
 }

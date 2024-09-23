@@ -31,7 +31,7 @@ import org.kie.kogito.ProcessInput;
 @ProcessInput(processName = "ShipmentClearance")
 public class ShipmentClearanceModelInput implements Model, MapInput, MapInputId, MapOutput, MappableToModel<ShipmentClearanceModel> {
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "item")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Item item;
@@ -57,7 +57,7 @@ public class ShipmentClearanceModelInput implements Model, MapInput, MapInputId,
         this.approved = approved;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "receiver")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Customer receiver;
@@ -70,7 +70,7 @@ public class ShipmentClearanceModelInput implements Model, MapInput, MapInputId,
         this.receiver = receiver;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "sender")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Customer sender;
