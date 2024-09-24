@@ -31,7 +31,7 @@ import org.kie.kogito.ProcessInput;
 @ProcessInput(processName = "India2_SubProcess")
 public class India2_SubProcessModelInput implements Model, MapInput, MapInputId, MapOutput, MappableToModel<India2_SubProcessModel> {
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "item")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Item item;
@@ -57,7 +57,7 @@ public class India2_SubProcessModelInput implements Model, MapInput, MapInputId,
         this.approved = approved;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "receiver")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Customer receiver;
@@ -70,7 +70,7 @@ public class India2_SubProcessModelInput implements Model, MapInput, MapInputId,
         this.receiver = receiver;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "input")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "sender")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Customer sender;
@@ -84,16 +84,29 @@ public class India2_SubProcessModelInput implements Model, MapInput, MapInputId,
     }
 
     @org.kie.kogito.codegen.VariableInfo(tags = "")
-    @com.fasterxml.jackson.annotation.JsonProperty(value = "coffees")
+    @com.fasterxml.jackson.annotation.JsonProperty(value = "receiverName")
     @jakarta.validation.Valid()
-    private java.util.List coffees;
+    private java.lang.String receiverName;
 
-    public java.util.List getCoffees() {
-        return coffees;
+    public java.lang.String getReceiverName() {
+        return receiverName;
     }
 
-    public void setCoffees(java.util.List coffees) {
-        this.coffees = coffees;
+    public void setReceiverName(java.lang.String receiverName) {
+        this.receiverName = receiverName;
+    }
+
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
+    @com.fasterxml.jackson.annotation.JsonProperty(value = "username")
+    @jakarta.validation.Valid()
+    private java.lang.String username;
+
+    public java.lang.String getUsername() {
+        return username;
+    }
+
+    public void setUsername(java.lang.String username) {
+        this.username = username;
     }
 
     @Override()
@@ -103,7 +116,8 @@ public class India2_SubProcessModelInput implements Model, MapInput, MapInputId,
         result.setApproved(getApproved());
         result.setReceiver(getReceiver());
         result.setSender(getSender());
-        result.setCoffees(getCoffees());
+        result.setReceiverName(getReceiverName());
+        result.setUsername(getUsername());
         return result;
     }
 }

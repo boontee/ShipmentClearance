@@ -1,0 +1,27 @@
+
+{
+    "specversion": "1.0",
+    "id": "21627e26-31eb-43e7-8343-92a696fd96b1",
+    "source": "",
+    "type": "travellers",
+    "time": "2022-02-24T13:25:16Z",
+    "data": {
+      "receiver" : {
+        "name" : "BlacklistedPerson",
+        "country" : "India",
+        "state" : "New Delhi"
+      },
+      "sender" : {
+        "name" : "test2",
+        "country" : "MY",
+        "state" : "KL"
+      },
+      "item" : {
+        "name":"coffee",
+        "quantity" : 10,
+        "unitPrice" : 100,
+        "totalPrice" : 1000
+      },
+      "approved" : false
+    }
+}

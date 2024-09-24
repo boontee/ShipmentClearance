@@ -96,7 +96,7 @@ public class India1_SubProcessProcess extends org.kie.kogito.process.impl.Abstra
             System.out.println("shipment.item:" + item);
             System.out.println("shipment.approved:" + approved);
             System.out.println("receiverName:" + receiverName);
-            System.out.println("****************** Post");
+            System.out.println("****************** India1_SubProcess Post");
         });
         actionNode_573F3C1A_BE3F_447A_8DE2_671A8A1B1C0B.done();
         org.jbpm.ruleflow.core.factory.ActionNodeFactory<?> actionNode_7E3702E2_0CF5_4EB1_AC1B_FD9175B9BF83 = factory.actionNode(org.jbpm.ruleflow.core.WorkflowElementIdentifierFactory.fromExternalFormat("_7E3702E2-0CF5-4EB1-AC1B-FD9175B9BF83"));

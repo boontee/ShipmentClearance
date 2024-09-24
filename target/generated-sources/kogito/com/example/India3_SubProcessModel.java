@@ -26,8 +26,8 @@ import java.util.HashMap;
 import org.kie.kogito.MappableToModel;
 import org.kie.kogito.Model;
 
-@org.kie.kogito.codegen.Generated(value = "kogito-codegen", reference = "India2_SubProcess", name = "India2_SubProcess", hidden = false)
-public class India2_SubProcessModel implements org.kie.kogito.Model, MapInput, MapInputId, MapOutput, MappableToModel<India2_SubProcessModelOutput> {
+@org.kie.kogito.codegen.Generated(value = "kogito-codegen", reference = "India3_SubProcess", name = "India3_SubProcess", hidden = false)
+public class India3_SubProcessModel implements org.kie.kogito.Model, MapInput, MapInputId, MapOutput, MappableToModel<India3_SubProcessModelOutput> {
 
     private String id;
 
@@ -39,7 +39,7 @@ public class India2_SubProcessModel implements org.kie.kogito.Model, MapInput, M
         return this.id;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "")
+    @org.kie.kogito.codegen.VariableInfo(tags = "input")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "item")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Item item;
@@ -65,7 +65,7 @@ public class India2_SubProcessModel implements org.kie.kogito.Model, MapInput, M
         this.approved = approved;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "")
+    @org.kie.kogito.codegen.VariableInfo(tags = "input")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "receiver")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Customer receiver;
@@ -78,7 +78,7 @@ public class India2_SubProcessModel implements org.kie.kogito.Model, MapInput, M
         this.receiver = receiver;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "")
+    @org.kie.kogito.codegen.VariableInfo(tags = "input")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "sender")
     @jakarta.validation.Valid()
     private org.acme.cc_approval.model.Customer sender;
@@ -92,41 +92,24 @@ public class India2_SubProcessModel implements org.kie.kogito.Model, MapInput, M
     }
 
     @org.kie.kogito.codegen.VariableInfo(tags = "")
-    @com.fasterxml.jackson.annotation.JsonProperty(value = "receiverName")
+    @com.fasterxml.jackson.annotation.JsonProperty(value = "coffees")
     @jakarta.validation.Valid()
-    private java.lang.String receiverName;
+    private java.util.List coffees;
 
-    public java.lang.String getReceiverName() {
-        return receiverName;
+    public java.util.List getCoffees() {
+        return coffees;
     }
 
-    public void setReceiverName(java.lang.String receiverName) {
-        this.receiverName = receiverName;
-    }
-
-    @org.kie.kogito.codegen.VariableInfo(tags = "")
-    @com.fasterxml.jackson.annotation.JsonProperty(value = "username")
-    @jakarta.validation.Valid()
-    private java.lang.String username;
-
-    public java.lang.String getUsername() {
-        return username;
-    }
-
-    public void setUsername(java.lang.String username) {
-        this.username = username;
+    public void setCoffees(java.util.List coffees) {
+        this.coffees = coffees;
     }
 
     @Override()
-    public India2_SubProcessModelOutput toModel() {
-        India2_SubProcessModelOutput result = new India2_SubProcessModelOutput();
+    public India3_SubProcessModelOutput toModel() {
+        India3_SubProcessModelOutput result = new India3_SubProcessModelOutput();
         result.setId(getId());
-        result.setItem(getItem());
         result.setApproved(getApproved());
-        result.setReceiver(getReceiver());
-        result.setSender(getSender());
-        result.setReceiverName(getReceiverName());
-        result.setUsername(getUsername());
+        result.setCoffees(getCoffees());
         return result;
     }
 }
