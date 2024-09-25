@@ -23,12 +23,12 @@ import org.kie.kogito.event.cloudevents.CloudEventMeta;
 public class ProcessCloudEventMetaFactory {
 
     @jakarta.enterprise.inject.Produces()
-    public CloudEventMeta buildCloudEventMeta_PRODUCED_processedtravellers() {
-        return new CloudEventMeta("process.processshipmentevent.processedtravellers", "/process/processshipmentevent", org.kie.kogito.event.EventKind.PRODUCED);
+    public CloudEventMeta buildCloudEventMeta_CONSUMED_travellers() {
+        return new CloudEventMeta("travellers", "", org.kie.kogito.event.EventKind.CONSUMED);
     }
 
     @jakarta.enterprise.inject.Produces()
-    public CloudEventMeta buildCloudEventMeta_CONSUMED_travellers() {
-        return new CloudEventMeta("travellers", "", org.kie.kogito.event.EventKind.CONSUMED);
+    public CloudEventMeta buildCloudEventMeta_PRODUCED_processedtravellers() {
+        return new CloudEventMeta("process.processshipmentevent.processedtravellers", "/process/processshipmentevent", org.kie.kogito.event.EventKind.PRODUCED);
     }
 }

@@ -25,19 +25,11 @@ import java.util.Map;
 import java.util.HashMap;
 import org.kie.kogito.MappableToModel;
 import org.kie.kogito.Model;
+import org.kie.kogito.ProcessInput;
 
-@org.kie.kogito.codegen.Generated(value = "kogito-codegen", reference = "India3_SubProcess", name = "India3_SubProcess", hidden = false)
-public class India3_SubProcessModel implements org.kie.kogito.Model, MapInput, MapInputId, MapOutput, MappableToModel<India3_SubProcessModelOutput> {
-
-    private String id;
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return this.id;
-    }
+@org.kie.kogito.codegen.Generated(value = "kogito-codegen", reference = "MY2_SubProcess", name = "MY2_SubProcess", hidden = true)
+@ProcessInput(processName = "MY2_SubProcess")
+public class MY2_SubProcessModelInput implements Model, MapInput, MapInputId, MapOutput, MappableToModel<MY2_SubProcessModel> {
 
     @org.kie.kogito.codegen.VariableInfo(tags = "input")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "item")
@@ -50,19 +42,6 @@ public class India3_SubProcessModel implements org.kie.kogito.Model, MapInput, M
 
     public void setItem(org.acme.cc_approval.model.Item item) {
         this.item = item;
-    }
-
-    @org.kie.kogito.codegen.VariableInfo(tags = "")
-    @com.fasterxml.jackson.annotation.JsonProperty(value = "approved")
-    @jakarta.validation.Valid()
-    private java.lang.Boolean approved;
-
-    public java.lang.Boolean getApproved() {
-        return approved;
-    }
-
-    public void setApproved(java.lang.Boolean approved) {
-        this.approved = approved;
     }
 
     @org.kie.kogito.codegen.VariableInfo(tags = "input")
@@ -91,25 +70,12 @@ public class India3_SubProcessModel implements org.kie.kogito.Model, MapInput, M
         this.sender = sender;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "")
-    @com.fasterxml.jackson.annotation.JsonProperty(value = "coffees")
-    @jakarta.validation.Valid()
-    private java.util.List coffees;
-
-    public java.util.List getCoffees() {
-        return coffees;
-    }
-
-    public void setCoffees(java.util.List coffees) {
-        this.coffees = coffees;
-    }
-
     @Override()
-    public India3_SubProcessModelOutput toModel() {
-        India3_SubProcessModelOutput result = new India3_SubProcessModelOutput();
-        result.setId(getId());
-        result.setApproved(getApproved());
-        result.setCoffees(getCoffees());
+    public MY2_SubProcessModel toModel() {
+        MY2_SubProcessModel result = new MY2_SubProcessModel();
+        result.setItem(getItem());
+        result.setReceiver(getReceiver());
+        result.setSender(getSender());
         return result;
     }
 }

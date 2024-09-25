@@ -59,14 +59,14 @@ import org.kie.kogito.auth.IdentityProvider;
 import org.kie.kogito.auth.IdentityProviders;
 import org.kie.kogito.auth.SecurityPolicy;
 
-@Path("/India3_SubProcess")
-@org.eclipse.microprofile.openapi.annotations.tags.Tag(name = "India3_SubProcess")
+@Path("/MY2_SubProcess")
+@org.eclipse.microprofile.openapi.annotations.tags.Tag(name = "MY2_SubProcess")
 @jakarta.enterprise.context.ApplicationScoped()
-public class India3_SubProcessResource {
+public class MY2_SubProcessResource {
 
     @jakarta.inject.Inject()
-    @jakarta.inject.Named("India3_SubProcess")
-    Process<India3_SubProcessModel> process;
+    @jakarta.inject.Named("MY2_SubProcess")
+    Process<MY2_SubProcessModel> process;
 
     @Inject
     ProcessService processService;
@@ -74,40 +74,40 @@ public class India3_SubProcessResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Operation(summary = "India3_SubProcess", description = "")
-    public Response createResource_India3_SubProcess(@Context HttpHeaders httpHeaders, @Context UriInfo uriInfo, @QueryParam("businessKey") @DefaultValue("") String businessKey, @jakarta.validation.Valid() @jakarta.validation.constraints.NotNull() India3_SubProcessModelInput resource) {
-        ProcessInstance<India3_SubProcessModel> pi = processService.createProcessInstance(process, businessKey, Optional.ofNullable(resource).orElse(new India3_SubProcessModelInput()).toModel(), httpHeaders.getRequestHeaders(), httpHeaders.getHeaderString("X-KOGITO-StartFromNode"));
+    @Operation(summary = "MY2_SubProcess", description = "")
+    public Response createResource_MY2_SubProcess(@Context HttpHeaders httpHeaders, @Context UriInfo uriInfo, @QueryParam("businessKey") @DefaultValue("") String businessKey, @jakarta.validation.Valid() @jakarta.validation.constraints.NotNull() MY2_SubProcessModelInput resource) {
+        ProcessInstance<MY2_SubProcessModel> pi = processService.createProcessInstance(process, businessKey, Optional.ofNullable(resource).orElse(new MY2_SubProcessModelInput()).toModel(), httpHeaders.getRequestHeaders(), httpHeaders.getHeaderString("X-KOGITO-StartFromNode"));
         return Response.created(uriInfo.getAbsolutePathBuilder().path(pi.id()).build()).entity(pi.checkError().variables().toModel()).build();
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "India3_SubProcess", description = "")
-    public List<India3_SubProcessModelOutput> getResources_India3_SubProcess() {
+    @Operation(summary = "MY2_SubProcess", description = "")
+    public List<MY2_SubProcessModelOutput> getResources_MY2_SubProcess() {
         return processService.getProcessInstanceOutput(process);
     }
 
     @GET
     @Path("schema")
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "India3_SubProcess", description = "")
-    public Map<String, Object> getResourceSchema_India3_SubProcess() {
+    @Operation(summary = "MY2_SubProcess", description = "")
+    public Map<String, Object> getResourceSchema_MY2_SubProcess() {
         return JsonSchemaUtil.load(this.getClass().getClassLoader(), process.id());
     }
 
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "India3_SubProcess", description = "")
-    public India3_SubProcessModelOutput getResource_India3_SubProcess(@PathParam("id") String id) {
+    @Operation(summary = "MY2_SubProcess", description = "")
+    public MY2_SubProcessModelOutput getResource_MY2_SubProcess(@PathParam("id") String id) {
         return processService.findById(process, id).orElseThrow(NotFoundException::new);
     }
 
     @DELETE
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "India3_SubProcess", description = "")
-    public India3_SubProcessModelOutput deleteResource_India3_SubProcess(@PathParam("id") final String id) {
+    @Operation(summary = "MY2_SubProcess", description = "")
+    public MY2_SubProcessModelOutput deleteResource_MY2_SubProcess(@PathParam("id") final String id) {
         return processService.delete(process, id).orElseThrow(NotFoundException::new);
     }
 
@@ -115,8 +115,8 @@ public class India3_SubProcessResource {
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "India3_SubProcess", description = "")
-    public India3_SubProcessModelOutput updateModel_India3_SubProcess(@PathParam("id") String id, @jakarta.validation.Valid() @jakarta.validation.constraints.NotNull() India3_SubProcessModelInput resource) {
+    @Operation(summary = "MY2_SubProcess", description = "")
+    public MY2_SubProcessModelOutput updateModel_MY2_SubProcess(@PathParam("id") String id, @jakarta.validation.Valid() @jakarta.validation.constraints.NotNull() MY2_SubProcessModelInput resource) {
         return processService.update(process, id, resource.toModel()).orElseThrow(NotFoundException::new);
     }
 
@@ -124,16 +124,16 @@ public class India3_SubProcessResource {
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "India3_SubProcess", description = "")
-    public India3_SubProcessModelOutput updateModelPartial_India3_SubProcess(@PathParam("id") String id, @jakarta.validation.Valid() @jakarta.validation.constraints.NotNull() India3_SubProcessModelInput resource) {
+    @Operation(summary = "MY2_SubProcess", description = "")
+    public MY2_SubProcessModelOutput updateModelPartial_MY2_SubProcess(@PathParam("id") String id, @jakarta.validation.Valid() @jakarta.validation.constraints.NotNull() MY2_SubProcessModelInput resource) {
         return processService.updatePartial(process, id, resource.toModel()).orElseThrow(NotFoundException::new);
     }
 
     @GET
     @Path("/{id}/tasks")
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "India3_SubProcess", description = "")
-    public List<TaskModel> getTasks_India3_SubProcess(@PathParam("id") String id, @QueryParam("user") final String user, @QueryParam("group") final List<String> groups) {
-        return processService.getTasks(process, id, SecurityPolicy.of(IdentityProviders.of(user, groups))).orElseThrow(NotFoundException::new).stream().map(com.example.India3_SubProcess_TaskModelFactory::from).collect(Collectors.toList());
+    @Operation(summary = "MY2_SubProcess", description = "")
+    public List<TaskModel> getTasks_MY2_SubProcess(@PathParam("id") String id, @QueryParam("user") final String user, @QueryParam("group") final List<String> groups) {
+        return processService.getTasks(process, id, SecurityPolicy.of(IdentityProviders.of(user, groups))).orElseThrow(NotFoundException::new).stream().map(com.example.MY2_SubProcess_TaskModelFactory::from).collect(Collectors.toList());
     }
 }

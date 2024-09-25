@@ -1,5 +1,5 @@
 package org.kie.kogito.app;
 @io.quarkus.runtime.Startup()
 public class HotReloadSupportClass {
-private static final String ID = "ce59951c-fb08-4422-817c-2b4fc57d720b";
+private static final String ID = "812c500e-96ce-45bf-b72e-7ab9d78b4d9e";
 }

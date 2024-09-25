@@ -136,4 +136,20 @@ public class MY_SubProcessResource {
     public List<TaskModel> getTasks_MY_SubProcess(@PathParam("id") String id, @QueryParam("user") final String user, @QueryParam("group") final List<String> groups) {
         return processService.getTasks(process, id, SecurityPolicy.of(IdentityProviders.of(user, groups))).orElseThrow(NotFoundException::new).stream().map(com.example.MY_SubProcess_TaskModelFactory::from).collect(Collectors.toList());
     }
+
+    @POST
+    @Path("/{id}/java.lang.RuntimeException")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public MY_SubProcessModelOutput signal_0(@PathParam("id") final String id) {
+        return processService.signalProcessInstance(process, id, null, "java.lang.RuntimeException").orElseThrow(() -> new NotFoundException());
+    }
+
+    @POST
+    @Path("/{id}/Error_Handler")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public MY_SubProcessModelOutput signal_1(@PathParam("id") final String id) {
+        return processService.signalProcessInstance(process, id, null, "Error Handler").orElseThrow(() -> new NotFoundException());
+    }
 }

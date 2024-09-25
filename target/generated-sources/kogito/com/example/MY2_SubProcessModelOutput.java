@@ -26,8 +26,8 @@ import java.util.HashMap;
 import org.kie.kogito.MappableToModel;
 import org.kie.kogito.Model;
 
-@org.kie.kogito.codegen.Generated(value = "kogito-codegen", reference = "India3_SubProcess", name = "India3_SubProcess", hidden = true)
-public class India3_SubProcessModelOutput implements org.kie.kogito.Model, MapInput, MapInputId, MapOutput, MappableToModel<India3_SubProcessModel> {
+@org.kie.kogito.codegen.Generated(value = "kogito-codegen", reference = "MY2_SubProcess", name = "MY2_SubProcess", hidden = true)
+public class MY2_SubProcessModelOutput implements org.kie.kogito.Model, MapInput, MapInputId, MapOutput, MappableToModel<MY2_SubProcessModel> {
 
     private String id;
 
@@ -39,7 +39,7 @@ public class India3_SubProcessModelOutput implements org.kie.kogito.Model, MapIn
         return this.id;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "")
+    @org.kie.kogito.codegen.VariableInfo(tags = "output")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "approved")
     @jakarta.validation.Valid()
     private java.lang.Boolean approved;
@@ -52,25 +52,11 @@ public class India3_SubProcessModelOutput implements org.kie.kogito.Model, MapIn
         this.approved = approved;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "")
-    @com.fasterxml.jackson.annotation.JsonProperty(value = "coffees")
-    @jakarta.validation.Valid()
-    private java.util.List coffees;
-
-    public java.util.List getCoffees() {
-        return coffees;
-    }
-
-    public void setCoffees(java.util.List coffees) {
-        this.coffees = coffees;
-    }
-
     @Override()
-    public India3_SubProcessModel toModel() {
-        India3_SubProcessModel result = new India3_SubProcessModel();
+    public MY2_SubProcessModel toModel() {
+        MY2_SubProcessModel result = new MY2_SubProcessModel();
         result.setId(getId());
         result.setApproved(getApproved());
-        result.setCoffees(getCoffees());
         return result;
     }
 }

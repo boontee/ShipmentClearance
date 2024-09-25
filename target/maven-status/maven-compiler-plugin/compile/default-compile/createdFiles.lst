@@ -1,5 +1,6 @@
 org/acme/cc_approval/model/Shipment.class
 org/acme/cc_approval/model/Coffee.class
+org/acme/cc_approval/service/LogService.class
 org/acme/cc_approval/model/Customer.class
 org/acme/cc_approval/service/CoffeeResource.class
 org/acme/cc_approval/model/Item.class

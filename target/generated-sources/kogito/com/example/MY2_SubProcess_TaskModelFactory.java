@@ -20,7 +20,7 @@ package com.example;
 
 import org.kie.kogito.process.workitem.TaskModel;
 
-public class India3_SubProcess_TaskModelFactory {
+public class MY2_SubProcess_TaskModelFactory {
 
     public static TaskModel from(org.kie.kogito.process.WorkItem workItem) {
         switch(workItem.getNodeId().toExternalFormat()) {

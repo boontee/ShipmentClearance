@@ -52,7 +52,7 @@ public class MY_SubProcessModel implements org.kie.kogito.Model, MapInput, MapIn
         this.item = item;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "output")
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "approved")
     @jakarta.validation.Valid()
     private java.lang.Boolean approved;
@@ -91,11 +91,25 @@ public class MY_SubProcessModel implements org.kie.kogito.Model, MapInput, MapIn
         this.sender = sender;
     }
 
+    @org.kie.kogito.codegen.VariableInfo(tags = "")
+    @com.fasterxml.jackson.annotation.JsonProperty(value = "coffees")
+    @jakarta.validation.Valid()
+    private java.util.List coffees;
+
+    public java.util.List getCoffees() {
+        return coffees;
+    }
+
+    public void setCoffees(java.util.List coffees) {
+        this.coffees = coffees;
+    }
+
     @Override()
     public MY_SubProcessModelOutput toModel() {
         MY_SubProcessModelOutput result = new MY_SubProcessModelOutput();
         result.setId(getId());
         result.setApproved(getApproved());
+        result.setCoffees(getCoffees());
         return result;
     }
 }

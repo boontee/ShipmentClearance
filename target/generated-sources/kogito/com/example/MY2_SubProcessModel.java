@@ -25,11 +25,19 @@ import java.util.Map;
 import java.util.HashMap;
 import org.kie.kogito.MappableToModel;
 import org.kie.kogito.Model;
-import org.kie.kogito.ProcessInput;
 
-@org.kie.kogito.codegen.Generated(value = "kogito-codegen", reference = "India3_SubProcess", name = "India3_SubProcess", hidden = true)
-@ProcessInput(processName = "India3_SubProcess")
-public class India3_SubProcessModelInput implements Model, MapInput, MapInputId, MapOutput, MappableToModel<India3_SubProcessModel> {
+@org.kie.kogito.codegen.Generated(value = "kogito-codegen", reference = "MY2_SubProcess", name = "MY2_SubProcess", hidden = false)
+public class MY2_SubProcessModel implements org.kie.kogito.Model, MapInput, MapInputId, MapOutput, MappableToModel<MY2_SubProcessModelOutput> {
+
+    private String id;
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return this.id;
+    }
 
     @org.kie.kogito.codegen.VariableInfo(tags = "input")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "item")
@@ -44,7 +52,7 @@ public class India3_SubProcessModelInput implements Model, MapInput, MapInputId,
         this.item = item;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "")
+    @org.kie.kogito.codegen.VariableInfo(tags = "output")
     @com.fasterxml.jackson.annotation.JsonProperty(value = "approved")
     @jakarta.validation.Valid()
     private java.lang.Boolean approved;
@@ -83,27 +91,11 @@ public class India3_SubProcessModelInput implements Model, MapInput, MapInputId,
         this.sender = sender;
     }
 
-    @org.kie.kogito.codegen.VariableInfo(tags = "")
-    @com.fasterxml.jackson.annotation.JsonProperty(value = "coffees")
-    @jakarta.validation.Valid()
-    private java.util.List coffees;
-
-    public java.util.List getCoffees() {
-        return coffees;
-    }
-
-    public void setCoffees(java.util.List coffees) {
-        this.coffees = coffees;
-    }
-
     @Override()
-    public India3_SubProcessModel toModel() {
-        India3_SubProcessModel result = new India3_SubProcessModel();
-        result.setItem(getItem());
+    public MY2_SubProcessModelOutput toModel() {
+        MY2_SubProcessModelOutput result = new MY2_SubProcessModelOutput();
+        result.setId(getId());
         result.setApproved(getApproved());
-        result.setReceiver(getReceiver());
-        result.setSender(getSender());
-        result.setCoffees(getCoffees());
         return result;
     }
 }
